@@ -6,7 +6,7 @@ import {
 } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
-import { User } from "./users.entity"; // Entité représentant un utilisateur
+import { Etudiant } from "./users.entity"; // Entité représentant un utilisateur
 import * as fs from "fs";
 import * as csvParser from "csv-parser";
 //import { UserFetch } from './user.dto';
@@ -15,8 +15,8 @@ import * as bcrypt from "bcrypt";
 @Injectable()
 export class UserService {
   constructor(
-    @InjectRepository(User)
-    private userRepository: Repository<User>, // Utilisation de TypeORM pour interagir avec une base de données
+    @InjectRepository(Etudiant)
+    private userRepository: Repository<Etudiant>, // Utilisation de TypeORM pour interagir avec une base de données
   ) {}
 
   private result: {

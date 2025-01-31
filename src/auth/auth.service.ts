@@ -8,14 +8,14 @@ import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
 import { MailService } from "../email/email.service";
 import * as bcrypt from "bcrypt";
-import { User } from "src/users/users.entity";
+import { Etudiant } from "src/users/users.entity";
 import { signInDto } from "src/auth/signIn.dto";
 
 @Injectable()
 export class AuthService {
   constructor(
-    @InjectRepository(User)
-    private userRepository: Repository<User>, // Utilisation de TypeORM pour interagir avec une base de données
+    @InjectRepository(Etudiant)
+    private userRepository: Repository<Etudiant>, // Utilisation de TypeORM pour interagir avec une base de données
     private readonly mailService: MailService,
   ) {}
 
